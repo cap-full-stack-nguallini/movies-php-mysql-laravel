@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/@yield('estilos')" type="text/css">
-    <title>@yield('titulo')</title>
+    <title>Actor</title>
 </head>
 
 <body>
-    @yield('principal')
+
+    <p>id: {{$actor->id}} - Nombre: {{$actor->first_name}} - Apellido: {{$actor->last_name}} - Rating:
+        {{$actor->rating}}</p>
+
 </body>
 
 </html>

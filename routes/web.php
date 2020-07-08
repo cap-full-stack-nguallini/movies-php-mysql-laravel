@@ -15,53 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/miPrimeraRuta', function () {
-    return "Creé mi primer ruta en Laravel.";
-});
+Route::get('/actores', 'ActorController@directory');
 
-Route::get('/esPar/{numero}', function ($numero) {
-    $mensaje = "El número es impar.";
+Route::get('/actor/{id}', 'ActorController@show');
 
-    if ($numero % 2 === 0) {
-        $mensaje = "El número es par.";
-    }
-
-    return $mensaje;
-});
-
-Route::get('/sumar/{numero1}/{numero2}', function ($numero1, $numero2) {
-
-    return ($numero1 + $numero2);
-});
-
-Route::get('/sumarOpc/{numero1}/{numero2}/{numero3?}', function ($numero1, $numero2, $numero3 = 0) {
-
-    return ($numero1 + $numero2 + $numero3);
-});
-
-Route::get('/peliculas', function () {
-    $peliculas = [
-        0 => ["titulo" => "El clan", "rating" => 8],
-        1 => ["titulo" => "El Angel", "rating" => 9],
-        2 => ["titulo" => "Relatos salvajes", "rating" => 7],
-        3 => ["titulo" => "Nueve reinas", "rating" => 10],
-        4 => ["titulo" => "El potro", "rating" => 6]
-    ];
-    $vac = compact('peliculas');
-    return view('peliculas', $vac);
-});
-
-Route::get('/peliculas/{id}', function ($id) {
-
-    $peliculas = [
-        0 => ["titulo" => "El clan", "rating" => 8],
-        1 => ["titulo" => "El Angel", "rating" => 9],
-        2 => ["titulo" => "Relatos salvajes", "rating" => 7],
-        3 => ["titulo" => "Nueve reinas", "rating" => 10],
-        4 => ["titulo" => "El potro", "rating" => 6]
-    ];
-
-    $vac = compact('peliculas', 'id');
-
-    return view('detallePelicula', $vac);
-});
+Route::get('/actores/buscar', 'ActorController@search');
