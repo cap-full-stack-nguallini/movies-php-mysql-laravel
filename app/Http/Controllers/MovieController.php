@@ -118,4 +118,10 @@ class MovieController extends Controller
             return view('movieNoWrite', $vac);
         }
     }
+
+    public function api()
+    {
+        $movie = Movie::all();
+        return json_encode($movie);
+    }
 }

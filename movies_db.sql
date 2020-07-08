@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2020 a las 03:10:14
+-- Tiempo de generación: 08-03-2020 a las 04:55:15
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -633,8 +633,19 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `surname` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `avatar` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `surname`, `avatar`) VALUES
+(1, 'Rodrigo', 'rorodrigoserlite@gmail.com', '$2y$10$1IMqkE7duSA4MhKTKKeZ1.bgcTm84Ic8NeOxjyePafF/2emgJ/p8u', 'VhFGSk4DnmwJexrbP3ZZl52MjqbrP0Uv78f6VNJrVNTZlMlXNhHuwZinIHQm', '2020-03-04 23:03:44', '2020-03-05 07:42:21', 'Serlite', 'img_5e6067b0ef0c6.jpg'),
+(2, 'Juan', 'juankernil@gmail', '$2y$10$fX2FDXWxQCvklbZ.xCKiWO6lmjmKgHJynBKxmdaQ/T0pNMQ/GMC8y', NULL, '2020-03-05 05:55:35', '2020-03-05 05:59:57', 'Kernil', 'img_5e606b2d72e3d.png'),
+(3, 'Juanjo', 'junjitozapata@gmail.com', '$2y$10$2M8Tf6ZwUvMb4Oo2vAFzbO25Pm9hD5LWAB5TuhmCHO3vXnivUicRK', NULL, '2020-03-05 06:05:53', '2020-03-05 06:05:53', 'Zapata', 'no-image.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -780,7 +791,7 @@ ALTER TABLE `series`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
